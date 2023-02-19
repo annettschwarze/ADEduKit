@@ -1,0 +1,12 @@
+{
+    "id": "com.admadic.adedukit.dummy",
+    "scheme": "com.admadic.adedukit.dummy",
+    "keywords": ["DummyKeyword1", "DummyKeyword2"],
+    "keywords-en": ["DummyKeyword1(en)", "DummyKeyword2(en)"],
+    "keywords-de": ["DummyKeyword1(de)", "DummyKeyword2(de)"],
+    "thumbnail_spec": {
+        "thumbnail_id_1": "thumbnail_dummy_file_id_1.png",
+        "thumbnail_id_2": "thumbnail_dummy_file_id_1.png",
+        "thumbnail_id_x-${identifier}": "thumbnail_dummy_file_${identifier}.png"
+    }
+}

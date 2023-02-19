@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlView" customModule="ADEduKit" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="Pa3-h9-zeP" id="dqX-Z7-FbQ"/>
+                <outlet property="nextButton" destination="e4k-wU-e0b" id="Y0J-fR-Olp"/>
+                <outlet property="prevButton" destination="W38-UH-jVL" id="qyj-tW-kAf"/>
+                <outlet property="progressView" destination="IU3-tJ-Mfs" id="h32-Xu-eap"/>
+                <outlet property="resetButton" destination="iKK-mV-xwV" id="gL5-n8-Z18"/>
+                <outlet property="stopButton" destination="os0-X5-4oI" id="ZUM-68-sJA"/>
+                <outlet property="taskInfoLabel" destination="2eS-9n-sOU" id="Sbt-2c-CCv"/>
+                <outlet property="taskProgressLabel" destination="ffb-aa-HWp" id="HhC-7d-heZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="131"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pa3-h9-zeP">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dDJ-AA-ut2">
+                            <rect key="frame" x="0.0" y="0.0" width="667" height="46"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G2-Ew-Vte">
+                                    <rect key="frame" x="0.0" y="13" width="17" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W38-UH-jVL" userLabel="Prev Button">
+                                    <rect key="frame" x="21" y="12" width="50" height="22"/>
+                                    <state key="normal" image="arrowtriangle.backward.fill"/>
+                                    <connections>
+                                        <action selector="didTapPrevButton:" destination="-1" eventType="touchUpInside" id="KF7-P5-X3U"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4k-wU-e0b" userLabel="Next Button">
+                                    <rect key="frame" x="75" y="12" width="50.5" height="22"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="arrowtriangle.forward.fill"/>
+                                    <connections>
+                                        <action selector="didTapNextButton:" destination="-1" eventType="touchUpInside" id="PiT-0F-XMC"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKK-mV-xwV" userLabel="Reset Button">
+                                    <rect key="frame" x="129.5" y="12" width="63" height="22"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="arrow.uturn.backward.circle.fill"/>
+                                    <connections>
+                                        <action selector="didTapResetButton:" destination="-1" eventType="touchUpInside" id="sVe-rW-cDa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os0-X5-4oI" userLabel="Stop Button">
+                                    <rect key="frame" x="196.5" y="12" width="50.5" height="22"/>
+                                    <state key="normal" image="stop.fill"/>
+                                    <connections>
+                                        <action selector="didTapStopButton:" destination="-1" eventType="touchUpInside" id="dTo-9L-GPh"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-Q3-Wgr">
+                                    <rect key="frame" x="251" y="2.5" width="330" height="41"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Task Info&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eS-9n-sOU">
+                                            <rect key="frame" x="0.0" y="0.0" width="330" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 | 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffb-aa-HWp">
+                                            <rect key="frame" x="0.0" y="20.5" width="330" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMQ-qk-3yx">
+                                    <rect key="frame" x="585" y="13" width="82" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IU3-tJ-Mfs">
+                            <rect key="frame" x="0.0" y="46" width="667" height="4"/>
+                        </progressView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2aW-wu-sdv"/>
+                        <constraint firstItem="IU3-tJ-Mfs" firstAttribute="leading" secondItem="Pa3-h9-zeP" secondAttribute="leading" id="3vL-bO-BCg"/>
+                        <constraint firstAttribute="bottom" secondItem="IU3-tJ-Mfs" secondAttribute="bottom" id="98r-Ah-uOi"/>
+                        <constraint firstAttribute="trailing" secondItem="dDJ-AA-ut2" secondAttribute="trailing" id="LMS-Nx-aO2"/>
+                        <constraint firstItem="dDJ-AA-ut2" firstAttribute="leading" secondItem="Pa3-h9-zeP" secondAttribute="leading" id="PyX-fl-5Ko"/>
+                        <constraint firstItem="dDJ-AA-ut2" firstAttribute="top" secondItem="Pa3-h9-zeP" secondAttribute="top" id="Rsw-lN-4qx"/>
+                        <constraint firstItem="dDJ-AA-ut2" firstAttribute="bottom" secondItem="IU3-tJ-Mfs" secondAttribute="top" id="sga-6h-6mY"/>
+                        <constraint firstAttribute="trailing" secondItem="IU3-tJ-Mfs" secondAttribute="trailing" id="slN-vP-Rrm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Pa3-h9-zeP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jbp-9e-3Nw"/>
+                <constraint firstItem="Pa3-h9-zeP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xTA-kN-aFv"/>
+                <constraint firstAttribute="trailing" secondItem="Pa3-h9-zeP" secondAttribute="trailing" id="yMw-T1-3n7"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Pa3-h9-zeP" secondAttribute="bottom" id="ze2-lW-Gaf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="321.01449275362319" y="33.816964285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.uturn.backward.circle.fill" width="17" height="17"/>
+        <image name="arrowtriangle.backward.fill" width="14" height="14"/>
+        <image name="arrowtriangle.forward.fill" width="14" height="14"/>
+        <image name="stop.fill" width="14" height="14"/>
+    </resources>
+</document>
